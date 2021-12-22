@@ -8,7 +8,15 @@ import random
 data = json.load(open("dictionary.json"))
 
 
-
+ban = """ (                                           
+ )\ )           )                            
+(()/( (      ( /((               ) (   (     
+ /(_)))\  (  )\())\  (   (    ( /( )(  )\ )  
+(_))_((_) )\(_))((_) )\  )\ ) )(_)|()\(()/(  
+ |   \(_)((_) |_ (_)((_)_(_/(((_)_ ((_))(_)) 
+ | |) | / _||  _|| / _ \ ' \)) _` | '_| || | 
+ |___/|_\__| \__||_\___/_||_|\__,_|_|  \_, | 
+                                       |__/ """
 
 all_col= [Style.BRIGHT+Fore.RED,Style.BRIGHT+Fore.CYAN,Style.BRIGHT+Fore.LIGHTCYAN_EX, Style.BRIGHT+Fore.LIGHTBLUE_EX, Style.BRIGHT+Fore.LIGHTCYAN_EX,Style.BRIGHT+Fore.LIGHTMAGENTA_EX,Style.BRIGHT+Fore.LIGHTYELLOW_EX]
 
@@ -17,7 +25,7 @@ ran = random.choice(all_col)
 def banner():
         os.system("clear")
 
-        print(ran, pyfiglet.figlet_format("\tDictionary"))
+        print(ran,ban)
         print(ran + "\n\t\tV_1.0\t\n\n")
         print("*" * 63)
 
