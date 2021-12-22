@@ -32,26 +32,27 @@ banner()
 def dictionary(word):
 
 	if word in data:
-		print(f'"\n" {data[word]}')
+		return f'"\n"{ran} {data[word]}'
 
 	elif word.title() in data:
-		print(f'{data[word.title()]}')
+		return f'{ran}{data[word.title()]}'
 
 	elif word.upper() in data:
-		print("\n" + data[word.upper()])
+		return "\n"+ran + data[word.upper()]
 
 	elif len(get_close_matches(word , data.keys())) > 0:
-		print(f"\nDid you mean {get_close_matches(word , data.keys())[0]} instead of")
+		print(f"\n{ran}Did you mean {get_close_matches(word , data.keys())[0]} instead of")
+	
 		dec = input(ran+("\nType below [y/n]\n~>")).lower()
 
 		if dec == "y":
-			print(f"{data[get_close_matches(word , data.keys())[0]]}")
+			return f"{ran}{data[get_close_matches(word , data.keys())[0]]}"
 
 		elif dec == "n":
-			print("\nYou like rough play! ")
+			return "\n{ran}You like rough play! "
 
 	else:
-		print("\nNothing found! ")
+		return "\nNothing found! "
 
 cont = ""
 no = ["n","no"]
@@ -60,15 +61,11 @@ while cont not in no:
 	word = input(ran+"\nEnter word below to find\n~>").lower()
 
 	meaning = dictionary(word)
-	try:
-		meaning = filter(None , meaning)
-	except TypeError:
-		pass
 	if type(meaning) == list:
 		for i in meaning:
-			print(f"{i}")
+			print(f"{ran}{i}")
 	else:
-		print(f"{meaning}")
+		print(f"{ran}{meaning}")
 
 	cont = input(ran+"\nDo you want to continue [y/n]\n~>").lower()
 	if cont == "y":
