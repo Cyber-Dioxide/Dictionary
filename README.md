@@ -2,7 +2,7 @@
 An offline dictionary dictionary coded in python
 
 # Help
-For any questions , iam mostly active on Instagram @coding_memz , @saadkhan041
+For any questions , iam mostly active on Instagram @cyber_dioxide_
 
 # Requiremnets
 1. colorama
